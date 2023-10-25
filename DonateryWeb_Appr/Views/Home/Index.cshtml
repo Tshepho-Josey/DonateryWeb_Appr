@@ -1,0 +1,112 @@
+﻿@using Microsoft.AspNetCore.Http;
+@inject IHttpContextAccessor Accessor;
+@{
+    ViewData["Title"] = "Home Page";
+    bool isAuthenticated = Context.Request.Cookies["Authenticated"] != null && Context.Request.Cookies["Authenticated"].ToString().Equals("True");
+}
+
+<div class="text-center" style="background-color: orange;">
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        @if (isAuthenticated)
+        {
+            <h2>Money Available: R @ViewBag.moneyLeft</h2>
+                <div class="container">
+                    <div class="row justify-content-around">
+
+                        <div class="card m-5 w-25 p-3 mb-2 text-dark " style="box-shadow: #A020F0 0px 5px 15px;">
+                            <div class="card-body">
+                                <p class="card-text">
+                                    Allocate Money To Disasters<a asp-action="MakeAMoneyAllocation" class="btn btn-outline-secondary">Here</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="card m-5 w-25 p-3 mb-2 text-dark " style="box-shadow: #A020F0 0px 5px 15px;">
+                            <div class="card-body">
+                                <p class="card-text">
+                                    Allocate Goods To Disasters<a asp-action="MakeAGoodsAllocation" class="btn btn-outline-secondary">Here</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="card m-5 w-25 p-3 mb-2 text-dark " style="box-shadow: #A020F0 0px 5px 15px;">
+                            <div class="card-body">
+                                <p class="card-text">
+                                    Purchase Goods<a asp-action="MakeAPurchase" class="btn btn-outline-secondary">Here</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card m-5 w-25 p-3 mb-2 text-dark " style="box-shadow: #A020F0 0px 5px 15px;">
+                            <div class="card-body">
+                                <p class="card-text">
+                                    Money Donations Available<a asp-action="ViewDonationsOfMoney" class="btn btn-outline-secondary">Here</a>
+                                </p>
+                            </div>
+                        </div>
+
+
+
+                        <div class="card m-5 w-25 p-3 mb-2  text-dark" style="box-shadow: #A020F0 0px 5px 15px;">
+                            <div class="card-body">
+                                <p class="card-text">
+                                    Goods Donations Available <a style="margin:15px" asp-action="ViewDonationsOfGoods" class="btn btn-outline-secondary">Here</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="card m-5 w-25 p-3 mb-2  text-dark" style="box-shadow: #A020F0 0px 5px 15px;">
+
+                            <div class="card-body">
+                                <p class="card-text">
+                                    Disasters that are active <a style="margin:15px" asp-action="ViewActiveDisasters" class="btn btn-outline-secondary">Here</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="card m-5 w-25 p-3 mb-2  text-dark" style="box-shadow: #A020F0 0px 5px 15px;">
+
+                            <div class="card-body">
+                                <p class="card-text">
+                                    Add a new Categories<a style="margin:15px" asp-action="AddANewCategoryOfGoods" class="btn btn-outline-secondary">Here</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="card m-5 w-25 p-3 mb-2  text-dark" style="box-shadow: #A020F0 0px 5px 15px;">
+
+                            <div class="card-body">
+                                <p class="card-text">
+                                    Add a new Donation of money <a style="margin:15px" asp-action="MakeAMoneyDonation" class="btn btn-outline-secondary">Here</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="card m-5 w-25 p-3 mb-2  text-dark" style="box-shadow: #A020F0 0px 5px 15px;">
+
+                            <div class="card-body">
+                                <p class="card-text">
+                                    Add a new Donation of goods<a style="margin:15px" asp-action="MakeAGoodsDonation" class="btn btn-outline-secondary">Here</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="card m-5 w-25 p-3 mb-2  text-dark" style="box-shadow: #A020F0 0px 5px 15px;">
+
+                            <div class="card-body">
+                                <p class="card-text">
+                                    Add a new Disaster <a style="margin:15px" asp-action="AddANewActiveDisaster" class="btn btn-outline-secondary">Here</a>
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            }
+        else
+        {
+            <a class="btn w-100" style="background-color:#AA1AED" asp-action="AuthorisedUsersLogin">Login</a>
+        }
+        <a asp-action="publicInfoGoods" type="button" class="btn w-100 mt-4" style="background-color:#AA1AED">View Money Allocated to Disasters</a>
+    </div>
+</div>
