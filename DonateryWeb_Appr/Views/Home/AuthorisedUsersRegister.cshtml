@@ -1,6 +1,30 @@
 ﻿@model DonateryWeb_Appr.Models.AuthorisedUser
 
 @{
+<<<<<<< HEAD
+    ViewData["Title"] = "Register";
+}
+
+<div class="text-center mt-5">
+    <h1>@ViewData["Title"]</h1>
+
+    <div class="container">
+        <h2 style="color:orange;">Register</h2>
+        <form asp-action="AuthorisedUsersRegister">
+            <div class="form-group">
+                <label asp-for="UserNames" style="color:orange;">UserName</label>
+                <input asp-for="UserNames" class="form-control" placeholder="Enter your full name">
+                <span asp-validation-for="UserNames" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserPassword" style="color:orange;">Password</label>
+                <input asp-for="UserPassword" class="form-control" type="password" placeholder="Password">
+                <span asp-validation-for="UserPassword" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary w-100" style="background-color:purple; border-color:orange;">Register</button>
+        </form>
+    </div>
+=======
     ViewData["Title"] = "Register Here";
 }
 <h1>@ViewData["Title"]</h1>
@@ -20,6 +44,7 @@
         </div>
         <button type="submit" class="btn btn-primary" style="background-color:purple; border-color:orange;">Register</button>
     </form>
+>>>>>>> cd8b7d275e62824f7b98df1a1af6c472e4cc2c5f
 </div>
 
 @section Scripts {
@@ -27,3 +52,9 @@
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 }
+<<<<<<< HEAD
+
+
+
+=======
+>>>>>>> cd8b7d275e62824f7b98df1a1af6c472e4cc2c5f

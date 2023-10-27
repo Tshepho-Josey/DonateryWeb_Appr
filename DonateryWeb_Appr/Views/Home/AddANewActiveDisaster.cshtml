@@ -1,5 +1,57 @@
 ﻿@model DonateryWeb_Appr.Models.ActiveDisaster
 
+<<<<<<< HEAD
+@{
+    ViewData["Title"] = "Add A New Active Disaster";
+}
+
+<div class="text-center mt-5">
+    <h1>Add A New Active Disaster</h1>
+    <h4>Active Disaster</h4>
+    <hr />
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <form asp-action="AddANewActiveDisaster">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group">
+                    <label asp-for="DisasterLocation" class="control-label">Disaster Location</label>
+                    <input asp-for="DisasterLocation" class="form-control" />
+                    <span asp-validation-for="DisasterLocation" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DisasterDescription" class="control-label">Disaster Description</label>
+                    <input asp-for="DisasterDescription" class="form-control" />
+                    <span asp-validation-for="DisasterDescription" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DisasterStartDate" class="control-label">Disaster Start Date</label>
+                    <input asp-for="DisasterStartDate" class="form-control" />
+                    <span asp-validation-for="DisasterStartDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DisasterEndDate" class="control-label">Disaster End Date</label>
+                    <input asp-for="DisasterEndDate" class="form-control" />
+                    <span asp-validation-for="DisasterEndDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DisasterAidTypeWanted" class="control-label">Disaster Aid Type Wanted</label>
+                    <input asp-for="DisasterAidTypeWanted" class="form-control" />
+                    <span asp-validation-for="DisasterAidTypeWanted" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Add Disaster" class="btn btn-primary w-100" style="background-color:#AA1AED" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="mt-3">
+        <a asp-action="Index" class="btn btn-secondary">Back to Home</a>
+    </div>
+</div>
+
+=======
 
 @{
     ViewData["Title"] = "AddANewActiveDisaster";
@@ -50,8 +102,13 @@
     <a asp-action="Index" class="text-white">Back to Home</a>
 </div>
 
+>>>>>>> cd8b7d275e62824f7b98df1a1af6c472e4cc2c5f
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> cd8b7d275e62824f7b98df1a1af6c472e4cc2c5f

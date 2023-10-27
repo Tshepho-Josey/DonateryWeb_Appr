@@ -1,6 +1,64 @@
 ﻿@model DonateryWeb_Appr.Models.DonationOfGood
 
 @{
+<<<<<<< HEAD
+    ViewData["Title"] = " Donate Goods";
+}
+
+<div class="text-center mt-5">
+    <h1>Make A Goods Donation</h1>
+    <h4>Donation Of Good</h4>
+    <hr />
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <form asp-action="MakeAGoodsDonation">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="DonationId" class="control-label"></label>
+                    <input asp-for="DonationId" disabled class="form-control" />
+                    <span asp-validation-for="DonationId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DonationDate" class="control-label">Donation Date</label>
+                    <input asp-for="DonationDate" class="form-control" />
+                    <span asp-validation-for="DonationDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DonationNumberOfItems" class="control-label">Donation Number Of Items</label>
+                    <input asp-for="DonationNumberOfItems" class="form-control" />
+                    <span asp-validation-for="DonationNumberOfItems" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CategoryId" class="control-label">Category Of Goods</label>
+                    <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.DonationCategoryId"></select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DonationDescription" class="control-label">Donation Description</label>
+                    <input asp-for="DonationDescription" class="form-control" />
+                    <span asp-validation-for="DonationDescription" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DonationDonor" class="control-label">Donation Donor</label>
+                    <input asp-for="DonationDonor" class="form-control" id="donationdonor" />
+                    <span asp-validation-for="DonationDonor" class="text-danger"></span>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="Anonymous" onchange="AnonymousUser(this)">
+                        <label class="form-check-label" for="Anonymous">Remain Anonymous</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Make Donation" class="btn btn-primary w-100" style="background-color:#AA1AED" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="mt-3">
+        <a asp-action="Index" class="btn btn-secondary">Back to Home</a>
+    </div>
+</div>
+
+=======
     ViewData["Title"] = "MakeAGoodsDonation";
 }
 
@@ -63,8 +121,13 @@
     <a asp-action="Index" class="text-white">Back to Home</a>
 </div>
 
+>>>>>>> cd8b7d275e62824f7b98df1a1af6c472e4cc2c5f
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> cd8b7d275e62824f7b98df1a1af6c472e4cc2c5f
