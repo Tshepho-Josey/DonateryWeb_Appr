@@ -90,6 +90,9 @@ namespace DonateryWeb_Appr.Controllers
             return View();
         }
 
+<<<<<<< HEAD
+     
+=======
         [HttpPost]
         public IActionResult AuthorisedUsersRegister(AuthorisedUser objUser)
         {
@@ -105,6 +108,7 @@ namespace DonateryWeb_Appr.Controllers
                 return RedirectToAction("Index");
             }
         }
+>>>>>>> cd8b7d275e62824f7b98df1a1af6c472e4cc2c5f
 
         public IActionResult MakeAMoneyAllocation()
         {
@@ -128,7 +132,26 @@ namespace DonateryWeb_Appr.Controllers
             }
             return View(money);
         }
+<<<<<<< HEAD
+        
+        [HttpPost]
+        public IActionResult User(AuthorisedUser objUser)
+        {
+            objUser.UserId = Guid.NewGuid();
+            if (!ModelState.IsValid)
+            {
+                return View(objUser);
+            }
+            else
+            {
+                contextDB.AuthorisedUsers.Add(objUser);
+                contextDB.SaveChanges();
+                return RedirectToAction("Index");
+            }
+        }
+=======
 
+>>>>>>> cd8b7d275e62824f7b98df1a1af6c472e4cc2c5f
         public IActionResult MakeAMoneyDonation()
         {
             return View("MakeAMoneyDonation");
