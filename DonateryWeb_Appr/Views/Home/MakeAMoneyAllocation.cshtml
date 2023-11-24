@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ﻿@model DonateryWeb_Appr.Models.AllocationOfMoney
 
 @{
@@ -39,55 +38,10 @@
     <div class="mt-3">
         <a asp-action="Index" class="btn btn-secondary">Back to Home</a>
     </div>
-=======
-﻿@model DonateryWeb_Appr.Models.AllocationOfMoney;
-
-@{
-    ViewData["Title"] = "MakeAMoneyAllocation";
-}
-
-<h1>Make Money Allocation</h1>
-
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="MakeAMoneyAllocation">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-            <div class="form-group">
-                <label asp-for="DateOfAllocation" class="control-label">Date Of Allocation</label>
-                <input asp-for="DateOfAllocation" class="form-control" />
-                <span asp-validation-for="DateOfAllocation" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AmountAllocated" class="control-label">Amount to allocate</label>
-                <input asp-for="AmountAllocated" class="form-control" />
-                <span asp-validation-for="AmountAllocated" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="DisasterId" class="control-label">Disaster</label>
-                <select asp-for="DisasterId" class="form-control" asp-items="ViewBag.DisasterId"></select>
-            </div>
-
-            <div class="form-group">
-                <input type="submit" value="Make Allocation" class="btn w-50" style="background-color:#AA1AED" />
-            </div>
-        </form>
-    </div>
-</div>
-
-<div>
-    <a asp-action="Index" class="text-white">Back to Home</a>
->>>>>>> cd8b7d275e62824f7b98df1a1af6c472e4cc2c5f
 </div>
 
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> cd8b7d275e62824f7b98df1a1af6c472e4cc2c5f
